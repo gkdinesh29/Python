@@ -1,6 +1,6 @@
 import requests
 import hashlib
-apiUrl = "https://www.docker.com/"
+apiUrl = "https://www.jenkins.io/"
 filename = "fullresponse.txt"
 chunk_size = 100
 output ="fullcheck.txt"
