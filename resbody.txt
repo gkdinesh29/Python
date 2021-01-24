@@ -1,0 +1,340 @@
+Jenkins
+Jenkins
+What is CDF?
+Jenkins X
+Tekton
+Spinnaker
+Blog
+Documentation
+User Guide
+&nbsp;-&nbsp;Installing Jenkins
+&nbsp;-&nbsp;Jenkins Pipeline
+&nbsp;-&nbsp;Managing Jenkins
+&nbsp;-&nbsp;System Administration
+&nbsp;-&nbsp;Terms and Definitions
+Solution Pages
+Tutorials
+&nbsp;-&nbsp;Guided Tour
+&nbsp;-&nbsp;More Tutorials
+Developer Guide
+Contributor Guide
+Plugins
+Community
+Overview
+Chat
+Meet
+Events
+Issue Tracker
+Mailing Lists
+Wiki
+Account Management
+Special Interest Groups
+&nbsp;-&nbsp;Advocacy and Outreach
+&nbsp;-&nbsp;Chinese Localization
+&nbsp;-&nbsp;Cloud Native
+&nbsp;-&nbsp;Documentation
+&nbsp;-&nbsp;Google Summer of Code
+&nbsp;-&nbsp;Hardware and EDA
+&nbsp;-&nbsp;Pipeline Authoring
+&nbsp;-&nbsp;Platform
+&nbsp;-&nbsp;User Experience
+Subprojects
+Overview
+Evergreen
+Google Summer of Code in Jenkins
+Infrastructure
+CI/CD and Jenkins Area Meetups
+Jenkins Configuration as Code
+Jenkins Remoting
+Document Jenkins on Kubernetes
+About
+Security
+Press
+Awards
+Conduct
+Artwork
+English
+ä¸­æ Chinese
+Download
+&nbsp;
+&nbsp;
+Jenkins
+Build great things at any scale
+The leading open source automation server, Jenkins provides
+hundreds of plugins to support building, deploying and automating
+any project.
+Documentation
+Download
+  .carousel_824 {
+    background-size: cover !important;
+  }
+  .carousel_824 a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none !important;
+  }
+  .carousel_824 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #ProjectCarousel_824 {
+    background: #000000 url(https://www.jenkins.io/images/cdf/cdf-background-wide.jpg) no-repeat center;
+  }
+&nbsp;
+2020 Election Results
+We are happy to announce the Jenkins 2020 Elections results. Thanks to all candidates and voters who participated this year. Please welcome the new Jenkins Governance Board members and Officers!
+See the results here
+&nbsp;
+&nbsp;
+Jenkins is the Way!
+We are looking for experiences of Jenkins users from around the world showcasing how they are building, deploying, and automating great software with Jenkins. Check out their user stories and share yours
+More info
+&nbsp;
+&nbsp;
+Participate and Contribute!
+Jenkins is a community-driven project. We invite everyone to join us and move it forward. Any contribution matters: code, documentation, localization, blog posts, artwork, meetups, and anything else. If you have five minutes or a few hours, you can help!
+More info
+&nbsp;
+Continuous Integration and Continuous Delivery
+As an extensible automation server, Jenkins can be used as a simple
+CI server or turned into the continuous delivery hub for any project.
+Easy installation
+Jenkins is a self-contained Java-based program, ready to run
+out-of-the-box, with packages for Windows, Linux, macOS and other
+Unix-like operating systems.
+Easy configuration
+Jenkins can be easily set up and configured via its web interface,
+which includes on-the-fly error checks and built-in help.
+Plugins
+With hundreds of plugins in the Update Center, Jenkins integrates
+with practically every tool in the continuous integration and
+continuous delivery toolchain.
+Extensible
+Jenkins can be extended via its plugin architecture, providing
+nearly infinite possibilities for what Jenkins can do.
+Distributed
+Jenkins can easily distribute work across multiple machines,
+helping drive builds, tests and deployments across multiple
+platforms faster.
+  .video_321 {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+  .video_321 iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+Feb
+6
+-
+Feb
+7
+Sat
+10:00 am
+FOSDEM 2021
+Virtual
+Meet the Jenkins community at FOSDEM 2021!
+Recent Blog Posts
+Jan
+12
+2020 A Year Like No Other
+The Jenkins community congratulates all users and contributors with the New Year!
+Letâs take a look at some changes this year.
+We would like to thank all awesome Jenkins users and contributors who have been with us during this year.
+Highlights
+Some of the key highlights:
+Hundreds of first-timer contributors joined the community
+Major UI/UX improvements in the Jenkins core, including the landing page, plugin manager, dark theme, and read-only...
+Marky Jackson, Oleg Nenashev
+community
+new-year-blogpost
+governance
+Dec
+22
+Google Summer of Code 2020 summary
+With the mentor summit and the project retrospectives finished in October,
+now we can call Google Summer of Code 2020 officially over in the Jenkins community.
+On behalf of the Jenkins org team, we would like to thank all participants: students, mentors, applicants, and dozens of other contributors who participated in the project this year.
+Google Summer of Code would not be successful without the active participation...
+Oleg Nenashev
+gsoc
+gsoc2020
+jenkins
+community
+events
+mentor
+Dec
+17
+Jira upgrade for the Jenkins project
+The Jenkins project has used Jira to track issues for many years.
+Jenkins core, Jenkins modules, Jenkins infrastructure, and many Jenkins plugins manage their issue reports with our Jira server.
+Jira helps the Jenkins project manage issues and tasks related to over 250&#160;000 Jenkins installations.
+It tracks bugs, enhancement requests, tasks, and security issues.
+It is used regularly by users around the world.
+We&#8217;re grateful for the long-standing contribution...
+Mark Waite
+jenkins
+infrastructure
+jira
+Dec
+16
+Google Summer of Code 2021 call for Project Ideas and Mentors
+Google Summer of Code (GSoC)
+is a program where students are paid a stipend by Google to work on a free open source project.
+Students work on the project for three months (June to August).
+Prior to the coding phase, there is a month of community bonding, to welcome students to the Jenkins community and acquaint them with the projects processes for communication and collaboration.
+Mentors are actively...
+Kara de la Marck
+gsoc
+gsoc2021
+community
+events
+developer
+Dec
+11
+âJenkins Contributors Awarded Top Honors at DevOps World 2020â
+At DevOps World on September 24, 2020, through the sponsorship of CloudBees, three Jenkins contributors were recognized for their contributions to the Jenkins project.  The Jenkins Contributor Awards honor those who have made significant contributions to the Jenkins project.  The 2020 Jenkins Contributor Award winners are:
+Most Valuable Jenkins Contributor
+This award is presented to an individual who has contributed to the Jenkins project...
+Alyssa Tong
+event
+devopsworld2020
+Dec
+05
+3 Cases: Jenkins success stories from the community
+Back in April, when we started canvassing the Jenkins community for user stories concerning how Jenkins helped enterprise companies, startups, and students, we thought we&#8217;d see some exciting tales of DevOps inspiration and CI/CD integration. We found that some submitted stories were far too big to be constrained by our format of 'background/goal/solution/results.'
+Some Jenkins users had a much more complex story to tell, whether...
+Alyssa Tong
+Jenkinsistheway
+Jenkinsuserstories
+Dec
+04
+GSOD Project Report: Document Jenkins on Kubernetes
+Jenkins is the world&#8217;s leading open-source automation server used by companies large and small around the globe to implement continuous integration and continuous delivery.
+Kubernetes is a portable, extensible, open-source platform for managing containerized workloads and services, that facilitates both declarative configuration and automation.
+Kubernetes is compatible with the majority of CI/CD tools which allow developers to run tests, deploy builds in Kubernetes and update applications...
+Zainab Abubakar
+kubernetes
+helm
+documentation
+gsod
+gsod2020
+Dec
+03
+2020 Jenkins Board and Officer Elections Results
+The Jenkins community has recently completed the 2020 elections.
+On behalf of the Jenkins community and the elections committee,
+we congratulate all newly elected board members and officers!
+We also thank all candidates and voters who participated this year.
+Election results:
+Gavin Mogan and Marky Jackson will join
+Kohsuke Kawaguchi,  Ullrich Hafner and Oleg Nenashev
+on the Jenkins Governance Board
+Tim Jacomb was elected as Release Officer
+Marky Jackson will become the...
+Oleg Nenashev, Alex Earl, Ullrich Hafner
+community
+governance
+governance-board
+elections
+Nov
+10
+Jenkins 2.264+: Major changes in the weekly release line
+Recently we have selected Jenkins 2.263 as a new baseline for the LTS release line, with ETA in December 2020.
+It allows delivering significant and in some cases breaking changes which have been previously on hold.
+Beginning with the Jenkins 2.264 release on October 27, 2020, we&#8217;ve entered a period where the Jenkins weekly releases will include more significant changes than usual.
+That period of more significant...
+Mark Waite
+jenkins
+core
+testing
+ui
+Nov
+10
+Spring and XStream updates (breaking changes!)
+Cleaning up technical debt is a perennial topic among Jenkins core developers,
+and one of the most visible issues is the use of obsolete and/or forked third-party libraries.
+In a world where Dependabot is offering updates to libraries released just hours before,
+it is unpleasant to be working with dependencies that are many years old.
+Since large organizations in particular are unhappy to install software using obsolete or...
+Jesse Glick
+jenkins
+core
+developer
+We thank the following organizations for their major commitments to
+support the Jenkins project.
+We thank the following organizations for their support of the Jenkins
+project through free and/or open source licensing programs.
+Atlassian
+Datadog
+Mac Cloud
+PagerDuty
+Sentry
+XMission
+Tsinghua University
+Fastly
+SpinUp
+IBM
+Improve this page
+|
+Report a problem
+The content driving this site is licensed under the Creative
+Commons Attribution-ShareAlike 4.0 license.
+Resources
+Downloads
+Blog
+Documentation
+Plugins
+Security
+Contributing
+Project
+Structure and governance
+Issue tracker
+Wiki
+GitHub
+Jenkins on Jenkins
+Community
+Events
+Mailing lists
+Chats
+Special Interest Groups
+Twitter
+Reddit
+Other
+Code of Conduct
+Press information
+Merchandise
+Artwork
+Awards
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ 
+ga('create', 'UA-4216293-5', 'auto');
+ga('send', 'pageview');
+ga('set', 'anonymizeIp', true);
+  !function(d,s,id) {
+    var js, fjs=d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id=id;
+      js.src="//platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,"script","twitter-wjs");
+  
+  $(function(){
+    var $body = $(document.body);
+    $(".nav-link.dropdown-toggle").on("mousedown", function(){
+      $body.addClass("no-outline");
+    })
+    $body.on("keydown", function(){
+      $body.removeClass("no-outline");
+    })
+  })
