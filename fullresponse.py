@@ -20,6 +20,7 @@ API_URL = "https://www.jenkins.io/"
 FILENAME = "fullresponse.txt"
 CHUNK_SIZE = 100
 OUTPUT = "fullcheck.txt"
+TIMEOUT = 10  # Timeout in seconds
 
 class FileProcessor:
     """
@@ -35,11 +36,13 @@ class FileProcessor:
         The size of chunks to read from the response and file.
     output : str
         The path to the file where the MD5 hash will be saved.
+    timeout : int
+        The timeout duration for network requests.
     """
 
-    def __init__(self, url, filename, chunk_size, output):
+    def __init__(self, url, filename, chunk_size, output, timeout):
         """
-        Initializes the FileProcessor with URL, filenames, chunk size, and output file.
+        Initializes the FileProcessor with URL, filenames, chunk size, output file, and timeout.
 
         Parameters
         ----------
@@ -51,23 +54,31 @@ class FileProcessor:
             The size of chunks to read from the response and file.
         output : str
             The path to the file where the MD5 hash will be saved.
+        timeout : int
+            The timeout duration for network requests.
         """
         self.url = url
         self.filename = filename
         self.chunk_size = chunk_size
         self.output = output
+        self.timeout = timeout
 
     def download_file(self):
         """
         Downloads content from the URL and saves it to a file.
 
         Uses the `requests` library to perform the HTTP GET request and save
-        the content in chunks to the specified file.
+        the content in chunks to the specified file. A timeout is applied
+        to prevent hanging indefinitely.
         """
-        response = requests.get(self.url)
-        with open(self.filename, 'wb') as fd:
-            for chunk in response.iter_content(self.chunk_size):
-                fd.write(chunk)
+        try:
+            response = requests.get(self.url, timeout=self.timeout)
+            response.raise_for_status()  # Raises HTTPError for bad responses (4xx and 5xx)
+            with open(self.filename, 'wb') as fd:
+                for chunk in response.iter_content(self.chunk_size):
+                    fd.write(chunk)
+        except requests.RequestException as e:
+            print(f"An error occurred: {e}")
 
     def compute_md5_hash(self):
         """
@@ -109,7 +120,7 @@ def main():
     Creates an instance of FileProcessor and performs the download, hash
     computation, and saving of the hash.
     """
-    processor = FileProcessor(API_URL, FILENAME, CHUNK_SIZE, OUTPUT)
+    processor = FileProcessor(API_URL, FILENAME, CHUNK_SIZE, OUTPUT, TIMEOUT)
     processor.download_file()
     processor.save_hash()
 
