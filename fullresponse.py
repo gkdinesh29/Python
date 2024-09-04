@@ -25,3 +25,4 @@ print("MD5 Hash:", m.hexdigest())
 # Write the MD5 hash to an output file
 with open(OUTPUT, 'w') as fd:
     fd.write(m.hexdigest())
+    
