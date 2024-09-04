@@ -22,5 +22,3 @@ jobs:
       run: |
         pylint $(git ls-files '*.py')
 
-[MESSAGES CONTROL]
-disable=C0114,C0115,C0116
