@@ -31,5 +31,5 @@ with open(FILENAME, 'rb') as fd:
     m.update(fd.read())
 
 # Write the checksum to the output file
-with open(OUTPUT, 'w') as fd:
+with open(OUTPUT, 'w', encoding='utf-8') as fd:
     fd.write(m.hexdigest())
