@@ -12,7 +12,7 @@ Constants:
 
 import hashlib  # Standard library import
 import requests  # Third-party import
-from dataclasses import dataclass
+from dataclasses import dataclass  # Standard library import
 
 @dataclass
 class Configuration:
