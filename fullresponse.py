@@ -13,8 +13,8 @@ Constants:
 - OUTPUT: File where the MD5 hash of the content will be saved.
 """
 
-import requests
-import hashlib
+import hashlib  # Standard library import
+import requests  # Third-party import
 
 API_URL = "https://www.jenkins.io/"
 FILENAME = "fullresponse.txt"
