@@ -14,3 +14,4 @@ print(m)
 print(m.hexdigest())
 with open(output,'wb') as fd:
     fd.write(m.hexdigest())
+    
