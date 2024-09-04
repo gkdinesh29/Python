@@ -1,6 +1,6 @@
 """
-This module downloads content from a specified URL, computes its MD5 hash,
-and saves both the content and the hash to files.
+This module provides functionality to download content from a URL,
+compute its MD5 hash, and save both the content and the hash to files.
 
 Dependencies:
 - requests: For downloading the content from the URL.
@@ -21,46 +21,97 @@ FILENAME = "fullresponse.txt"
 CHUNK_SIZE = 100
 OUTPUT = "fullcheck.txt"
 
-def download_file(url, filename, chunk_size):
+class FileProcessor:
     """
-    Downloads content from a URL and saves it to a file.
+    A class to handle downloading a file from a URL and computing its MD5 hash.
 
-    Parameters:
-    url (str): The URL to download content from.
-    filename (str): The path to the file where the content will be saved.
-    chunk_size (int): The size of chunks to read from the response.
+    Attributes
+    ----------
+    url : str
+        The URL to download content from.
+    filename : str
+        The path to the file where the content will be saved.
+    chunk_size : int
+        The size of chunks to read from the response and file.
+    output : str
+        The path to the file where the MD5 hash will be saved.
     """
-    response = requests.get(url)
-    with open(filename, 'wb') as fd:
-        for chunk in response.iter_content(chunk_size):
-            fd.write(chunk)
 
-def compute_md5_hash(filename, chunk_size):
-    """
-    Computes the MD5 hash of the content in a file.
+    def __init__(self, url, filename, chunk_size, output):
+        """
+        Initializes the FileProcessor with URL, filenames, chunk size, and output file.
 
-    Parameters:
-    filename (str): The path to the file whose MD5 hash is to be computed.
-    chunk_size (int): The size of chunks to read from the file.
+        Parameters
+        ----------
+        url : str
+            The URL to download content from.
+        filename : str
+            The path to the file where the content will be saved.
+        chunk_size : int
+            The size of chunks to read from the response and file.
+        output : str
+            The path to the file where the MD5 hash will be saved.
+        """
+        self.url = url
+        self.filename = filename
+        self.chunk_size = chunk_size
+        self.output = output
 
-    Returns:
-    str: The hexadecimal MD5 hash of the file content.
-    """
-    m = hashlib.md5()
-    with open(filename, 'rb') as fd:
-        for chunk in iter(lambda: fd.read(chunk_size), b""):
-            m.update(chunk)
-    return m.hexdigest()
+    def download_file(self):
+        """
+        Downloads content from the URL and saves it to a file.
+
+        Uses the `requests` library to perform the HTTP GET request and save
+        the content in chunks to the specified file.
+        """
+        response = requests.get(self.url)
+        with open(self.filename, 'wb') as fd:
+            for chunk in response.iter_content(self.chunk_size):
+                fd.write(chunk)
+
+    def compute_md5_hash(self):
+        """
+        Computes the MD5 hash of the content in the file.
+
+        Parameters
+        ----------
+        filename : str
+            The path to the file whose MD5 hash is to be computed.
+        chunk_size : int
+            The size of chunks to read from the file.
+
+        Returns
+        -------
+        str
+            The hexadecimal MD5 hash of the file content.
+        """
+        m = hashlib.md5()
+        with open(self.filename, 'rb') as fd:
+            for chunk in iter(lambda: fd.read(self.chunk_size), b""):
+                m.update(chunk)
+        return m.hexdigest()
+
+    def save_hash(self):
+        """
+        Saves the MD5 hash to the output file.
+
+        Writes the computed MD5 hash to the specified output file.
+        """
+        md5_hash = self.compute_md5_hash()
+        with open(self.output, 'w', encoding='utf-8') as fd:
+            fd.write(md5_hash)
+        print("MD5 Hash:", md5_hash)
 
 def main():
     """
-    Main function to download content, compute its MD5 hash, and save the hash to a file.
+    Main function to execute the file download, hash computation, and hash saving.
+
+    Creates an instance of FileProcessor and performs the download, hash
+    computation, and saving of the hash.
     """
-    download_file(API_URL, FILENAME, CHUNK_SIZE)
-    md5_hash = compute_md5_hash(FILENAME, CHUNK_SIZE)
-    print("MD5 Hash:", md5_hash)
-    with open(OUTPUT, 'w') as fd:
-        fd.write(md5_hash)
+    processor = FileProcessor(API_URL, FILENAME, CHUNK_SIZE, OUTPUT)
+    processor.download_file()
+    processor.save_hash()
 
 if __name__ == "__main__":
     main()
