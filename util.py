@@ -63,12 +63,12 @@ def linkify_prs_and_authors(draft_body):
     for i, p in enumerate(draft_body_parts):
         draft_body_parts[i] = re.sub(
             r"\(#([0-9]*)\) @([^ ]*)$",
-            r"[#\1](https://github.com/python/python/pull/\1) [@\2](https://github.com/\2)",  # noqa E501
+            r"[#\1](https://github.com/python/python/pull/\1) [@\2](https://github.com/\2)",
             p,
         )
         new_contrib_string = re.sub(
             r".*\(#([0-9]*)\) @([^ ]*)$",
-            r"* [@\2](https://github.com/\2) made their first contribution in [#\1](https://github.com/python/python/pull/\1)",  # noqa E501
+            r"* [@\2](https://github.com/\2) made their first contribution in [#\1](https://github.com/python/python/pull/\1)",
             p,
         )
         if new_contrib_string.startswith("* "):
@@ -136,15 +136,29 @@ def release(new_version_num):
     # Update config files
     click.echo("Updating setup.cfg, pyproject.toml, and others...")
     update_file_with_new_version(
-        "plugins/python-templater-dbt/setup.cfg", new_version_num, ["version"]
+        "plugins/python-templater-dbt/setup.cfg",
+        new_version_num,
+        ["version"]
     )
-    update_file_with_new_version("pyproject.toml", new_version_num, ["version"])
+    update_file_with_new_version(
+        "pyproject.toml",
+        new_version_num,
+        ["version"]
+    )
 
     # Handle non-pre-releases
     if not is_pre_release:
-        update_file_with_new_version("pyproject.toml", new_version_num, ["stable_version"])
+        update_file_with_new_version(
+            "pyproject.toml",
+            new_version_num,
+            ["stable_version"]
+        )
         click.echo("Updating gettingstarted.rst...")
-        update_file_with_new_version("docs/source/gettingstarted.rst", new_version_num, ["    $ python version"])
+        update_file_with_new_version(
+            "docs/source/gettingstarted.rst",
+            new_version_num,
+            ["    $ python version"]
+        )
 
     click.echo("DONE")
 
