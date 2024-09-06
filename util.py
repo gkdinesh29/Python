@@ -16,7 +16,7 @@ from ghapi.all import GhApi
 
 @click.group()
 def cli():
-    """Launch the utility cli."""
+    """Launch the utility CLI."""
 
 
 @cli.command()
@@ -63,12 +63,14 @@ def linkify_prs_and_authors(draft_body):
     for i, p in enumerate(draft_body_parts):
         draft_body_parts[i] = re.sub(
             r"\(#([0-9]*)\) @([^ ]*)$",
-            r"[#\1](https://github.com/python/python/pull/\1) [@\2](https://github.com/\2)",
+            r"[#\1](https://github.com/python/python/pull/\1) [@\2]"
+            r"(https://github.com/\2)",
             p,
         )
         new_contrib_string = re.sub(
             r".*\(#([0-9]*)\) @([^ ]*)$",
-            r"* [@\2](https://github.com/\2) made their first contribution in [#\1](https://github.com/python/python/pull/\1)",
+            r"* [@\2](https://github.com/\2) made their first contribution in "
+            r"[#\1](https://github.com/python/python/pull/\1)",
             p,
         )
         if new_contrib_string.startswith("* "):
@@ -79,7 +81,7 @@ def linkify_prs_and_authors(draft_body):
     return draft_body_parts, potential_new_contributors
 
 
-def update_file_with_new_version(filename, new_version_num, keys, is_pre_release=False):
+def update_file_with_new_version(filename, new_version_num, keys):
     """Update version number in a given file."""
     with open(filename, "r", encoding="utf8") as input_file:
         lines = input_file.readlines()
@@ -116,7 +118,8 @@ def release(new_version_num):
     potential_new_contributors.reverse()
     seen_contributors = set()
     deduped_new_contributors = [
-        c for c in potential_new_contributors if c["name"] not in seen_contributors and not seen_contributors.add(c["name"])
+        c for c in potential_new_contributors
+        if c["name"] not in seen_contributors and not seen_contributors.add(c["name"])
     ]
 
     # Update CHANGELOG.md
